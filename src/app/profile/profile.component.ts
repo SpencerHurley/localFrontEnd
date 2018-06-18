@@ -21,7 +21,8 @@ export class ProfileComponent implements OnInit {
   sections = [];
 
   update(user) {
-    console.log(user);
+    this.service
+      .updateUser(user);
   }
 
   logout() {

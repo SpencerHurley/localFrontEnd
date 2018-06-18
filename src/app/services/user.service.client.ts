@@ -35,6 +35,11 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  updateUser(user) {
+    return fetch('http://localhost:4000/api/user')
+      .then(response => response.json());
+  }
+
   createUser(username, password) {
     const user = {
       username: username,
