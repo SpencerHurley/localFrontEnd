@@ -13,7 +13,7 @@
   <input [(ngModel)]="user.email"
          placeholder="email"
          class="form-control"/>
-  <button (click)="update()"
+  <button  (click)="update()"
           class="btn btn-primary btn-block">
     Update
   </button>
@@ -29,5 +29,7 @@
 
   <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
+  <a *ngIf="isAdmin" routerLink="/admin">Admin</a>
+
 
 </div>
