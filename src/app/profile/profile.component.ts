@@ -19,8 +19,7 @@ export class ProfileComponent implements OnInit {
   };
   sections = [];
 
-  update(userId) {
-    console.log(userId);
+  update() {
     this.service.updateUser(this.user)
       .then(user => this.user = user);
   }
