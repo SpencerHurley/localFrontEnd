@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
     console.log([username, password]);
     this.service
       .login(username, password)
-      .then(() => {
+      .then((user) => {
         this.router.navigate(['profile']);
       });
   }
