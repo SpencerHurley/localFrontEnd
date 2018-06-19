@@ -32,7 +32,7 @@ export class SectionServiceClient {
   }
 
   createSection(courseId, name, seats) {
-    const section = {courseId, name, seats};
+    const section = {courseId, name, maxSeats: seats, availableSeats: seats};
     return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
       method: 'post',
       body: JSON.stringify(section),
