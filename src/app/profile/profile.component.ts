@@ -35,12 +35,15 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  unenroll(sectionId) {
-    this.sectionService
-      .unenrollStudentInSection(sectionId)
-      .then(() => this.sectionService.findSectionsForStudent())
-      .then((sections) => this.sections = sections)
-      .then(() => console.log(this.sections));
+  unenroll(enrollment) {
+    // if (enrollment.section.availableSeats < enrollment.section.maxSeats) {
+      console.log("Unenroll");
+      this.sectionService
+        .unenrollStudentInSection(enrollment.section._id)
+        .then(() => this.sectionService.findSectionsForStudent())
+        .then((sections) => this.sections = sections)
+        .then(() => console.log(this.sections));
+    // }
   }
 
   ngOnInit() {

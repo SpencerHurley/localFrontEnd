@@ -37,11 +37,13 @@ export class SectionListComponent implements OnInit {
   }
 
   enroll(section) {
-    this.service
-      .enrollStudentInSection(section._id)
-      .then(() => {
-        this.router.navigate(['profile']);
-      });
+    if (section.availableSeats > 0) {
+      this.service
+        .enrollStudentInSection(section._id)
+        .then(() => {
+          this.router.navigate(['profile']);
+        });
+    }
   }
 
   ngOnInit() {
