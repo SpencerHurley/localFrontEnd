@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
 
   sections = [];
   isAdmin = false;
+  showSections = false;
 
   update() {
     console.log("Updating");
@@ -54,7 +55,8 @@ export class ProfileComponent implements OnInit {
 
     this.sectionService
       .findSectionsForStudent()
-      .then(sections => this.sections = sections );
+      .then(sections => this.sections = sections )
+      .then(() => this.showSections = (this.sections.length > 0));
   }
 
 }

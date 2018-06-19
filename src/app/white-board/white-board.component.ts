@@ -11,11 +11,12 @@ export class WhiteBoardComponent implements OnInit {
   constructor(private service: SectionServiceClient) { }
 
   sections = [];
+  showProfile = false;
 
   ngOnInit() {
     this.service.findSectionsForStudent()
       .then((sections) => this.sections = sections)
-      .then(() => console.log(this.sections));
+      .then(() => this.showProfile = (this.sections.length > 0));
   }
 
 }

@@ -31,6 +31,11 @@ export class SectionServiceClient {
       .then(response => response.json());
   }
 
+  findSectionById(sectionId) {
+    return fetch('http://localhost:4000/api/section/' + sectionId)
+      .then(response => response.json());
+  }
+
   createSection(courseId, name, seats) {
     const section = {courseId, name, maxSeats: seats, availableSeats: seats};
     return fetch(this.SECTION_URL.replace('COURSEID', courseId), {
@@ -41,5 +46,23 @@ export class SectionServiceClient {
         'content-type': 'application/json'
       }
     });
+  }
+
+  deleteSection(sectionId) {
+    return fetch('http://localhost:4000/api/section/' + sectionId,
+      {
+        method: 'delete'
+      }).then(response => response.json());
+  }
+
+  updateSection(section) {
+    return fetch('http://localhost:4000/api/section/' + section._id,
+      {
+        method: 'put',
+        body: JSON.stringify(section),
+        headers: {
+          'content-type' : 'application/json'
+        }
+      }).then(response => response.json());
   }
 }

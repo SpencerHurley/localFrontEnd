@@ -3,18 +3,10 @@
     White Board
   </h1>
 
-  <h2>
-    Currently enrolled classes:
-  </h2>
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.availableSeats}}/{{enrollment.section.maxSeats}})
-    </li>
-  </ul>
 
   <a routerLink="/login">Login</a>
   <a routerLink="/register">Register</a>
+  <a *ngIf="showProfile" routerLink="/profile">Profile</a>
 
   <app-course-grid></app-course-grid>
 </div>

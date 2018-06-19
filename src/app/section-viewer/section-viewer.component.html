@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <h1>Section Info:</h1>
+
+  <h5>Section Name:</h5>
+  <input [(ngModel)]="section.name"
+         placeholder="section name"
+         class="form-control"/>
+  <h5>Maximum seats:</h5>
+  <input [(ngModel)]="section.maxSeats"
+         placeholder="Maximum seats"
+         class="form-control"/>
+  <button  (click)="update(section)"
+           class="btn btn-primary btn-block">
+    Update
+  </button>
+  <a routerLink="/admin">Admin</a>
+</div>
