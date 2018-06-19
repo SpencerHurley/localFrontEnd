@@ -35,6 +35,11 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  unenroll(sectionId) {
+    this.sectionService
+      .unenrollStudentInSection(sectionId);
+  }
+
   ngOnInit() {
     this.service
       .profile()
