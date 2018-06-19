@@ -15,16 +15,15 @@ export class ProfileComponent implements OnInit {
               private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  user = {
-  };
+  user = {}
 
   sections = [];
   isAdmin = false;
 
   update() {
-    console.log(this.user);
+    console.log("Updating");
     this.service.updateUser(this.user)
-      .then(user => this.user = user);
+      .then(() => {});
   }
 
   logout() {
