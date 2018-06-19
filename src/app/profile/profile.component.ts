@@ -31,7 +31,6 @@ export class ProfileComponent implements OnInit {
       .logout()
       .then(() =>
         this.router.navigate(['login']));
-
   }
 
   unenroll(enrollment) {
@@ -48,10 +47,10 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.service
       .profile()
+      .then((user) => user.json())
       .then(user => this.user = user)
-      .then((user) =>
-          this.isAdmin = (user.username === 'admin')
-      );
+      .then((user) => this.isAdmin = (user.username === 'admin'))
+      .then(() => console.log(this.user));
 
     this.sectionService
       .findSectionsForStudent()
