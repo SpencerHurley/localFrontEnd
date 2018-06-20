@@ -11,8 +11,10 @@ import {Router} from "@angular/router";
 export class CourseListComponent implements OnInit {
 
   activeCourse;
-  courses;
-  sections;
+  courses = [];
+  sections = [];
+  sectionName;
+  seats;
   constructor(private service: CourseServiceClient,
               private sectionService: SectionServiceClient) { }
 
