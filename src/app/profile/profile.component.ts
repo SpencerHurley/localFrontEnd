@@ -15,8 +15,7 @@ export class ProfileComponent implements OnInit {
               private sectionService: SectionServiceClient,
               private router: Router) { }
 
-  user = {}
-
+  user;
   sections = [];
   isAdmin = false;
   showSections = false;
