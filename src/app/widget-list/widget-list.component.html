@@ -17,13 +17,16 @@
       <h1>ListWidget</h1>
       <ul class="list-group">
         <li class="list-group-item"
-            *ngFor="let item of widget.items.split('|')">
+            *ngFor="let item of widget.listItems.split('|')">
           {{item}}
         </li>
       </ul>
     </div>
-    <div *ngSwitchCase="'Exam'">
-      <h1>Exam Widget</h1>
+    <div *ngSwitchCase="'ParagraphWidget'">
+      <h1>Paragraph Widget</h1>
+      <p>
+        {{widget.text}}
+      </p>
     </div>
   </div>
 </div>
