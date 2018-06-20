@@ -15,7 +15,7 @@ export class SectionViewerComponent implements OnInit {
     this.route.params.subscribe(params => this.loadSection(params['sectionId']));
   }
 
-  section = {};
+  section;
   loadSection(sectionId) {
     this.service.findSectionById(sectionId)
       .then(section => this.section = section);
