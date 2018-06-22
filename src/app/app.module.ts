@@ -18,6 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from "./services/user.service.client";
 import {SectionServiceClient} from "./services/section.service.client";
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdminPageComponent } from './admin-page/admin-page.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
