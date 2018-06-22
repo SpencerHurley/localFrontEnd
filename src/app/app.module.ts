@@ -11,6 +11,7 @@ import {UserServiceClient} from "./services/user.service.client";
 import { HomeComponent } from './home/home.component';
 import { RoutefinderComponent } from './routefinder/routefinder.component';
 import { TeamComponent } from './team/team.component';
+import {RouteFinderServiceClient} from "./services/routefinder.service.client";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TeamComponent } from './team/team.component';
     routing
   ],
   providers: [
+    RouteFinderServiceClient,
     UserServiceClient,
   ],
   bootstrap: [AppComponent]

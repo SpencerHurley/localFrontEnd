@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RouteFinderServiceClient} from "../services/routefinder.service.client";
 
 @Component({
   selector: 'app-routefinder',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoutefinderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: RouteFinderServiceClient) { }
 
+  city;
+  coordinates = {};
+  searchCity() {
+    this.service.findCoordinatesForCity(this.city)
+      .then((response) => this.coordinates = response)
+      .then(() => console.log(this.coordinates));
+  }
   ngOnInit() {
   }
 

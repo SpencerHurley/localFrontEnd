@@ -1,3 +1,12 @@
-<p>
-  routefinder works!
-</p>
+<div class="container-fluid text-center justify-content-center">
+  <h1>Enter a city name to find routes near it.</h1>
+
+  <input [(ngModel)]="city"
+         placeholder="City name"
+         class="form-control"/>
+  <button (click)="searchCity()"
+          class="btn btn-primary btn-block">
+    Search for routes
+  </button>
+  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
+</div>
