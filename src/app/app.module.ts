@@ -1,35 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import {FormsModule} from "@angular/forms";
-import {CourseNavigatorServiceClient} from "./services/course-navigator.service.client";
-import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
-import { WhiteBoardComponent } from './white-board/white-board.component';
-import {CourseServiceClient} from "./services/course.service.client";
 import {routing} from "./app.routing";
-import {ModuleServiceClient} from "./services/module.service.client";
-import {LessonServiceClient} from "./services/lesson.service.client";
-import {WidgetServiceClient} from "./services/widget.service.client";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from "./services/user.service.client";
-import {SectionServiceClient} from "./services/section.service.client";
-import { AdminPageComponent } from './admin-page/admin-page.component';
 import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
-    CourseNavigatorComponent,
-    WhiteBoardComponent,
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    AdminPageComponent,
     HomeComponent
   ],
   imports: [
@@ -38,13 +25,7 @@ import { HomeComponent } from './home/home.component';
     routing
   ],
   providers: [
-    CourseNavigatorServiceClient,
-    CourseServiceClient,
-    ModuleServiceClient,
-    LessonServiceClient,
-    WidgetServiceClient,
     UserServiceClient,
-    SectionServiceClient
   ],
   bootstrap: [AppComponent]
 })

@@ -18,22 +18,7 @@
     Update
   </button>
 
-  <h2>Sections ({{sections.length}})</h2>
-
-  <ul class="list-group">
-    <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.availableSeats}}/{{enrollment.section.maxSeats}})
-      <button  (click)="unenroll(enrollment)"
-               class="float-right btn btn-primary">
-        Unenroll
-      </button>
-    </li>
-  </ul>
-
-  <a (click)="logout()">Logout</a>
   <a routerLink="/home">Home</a>
   <a *ngIf="isAdmin" routerLink="/admin">Admin</a>
-
 
 </div>

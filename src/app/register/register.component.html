@@ -1,5 +1,7 @@
-<div class="container-fluid">
-  <h1>Register</h1>
+<div class="container-fluid text-center">
+  <div>
+    <h1>Register</h1>
+  </div>
 
   <input [(ngModel)]="username"
          placeholder="username"
@@ -10,12 +12,27 @@
   <input [(ngModel)]="password2"
          placeholder="verify password"
          class="form-control"/>
+  <fieldset class="form-group">
+    <legend>I am a:</legend>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        Runner
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        Coach
+      </label>
+    </div>
+  </fieldset>
   <button (click)="register(username, password, password2)"
           class="btn btn-primary btn-block">
     Register
   </button>
+  <a class="btn btn-primary btn-block btn-success" routerLink="/home">Home</a>
 
-  <a routerLink="/login">Login</a>
-  <a routerLink="/home">Home</a>
+
 
 </div>

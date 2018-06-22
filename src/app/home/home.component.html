@@ -1,39 +1,33 @@
 <div>
   <!-- Navigation bar based on Bootswatch @ https://bootswatch.com/darkly/ -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarColor02">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/register">Register</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
+    <a class="navbar-brand btn btn-success mr-auto p-2" routerLink="">RunSmart</a>
+    <a class="navbar-brand btn btn-success p-2" routerLink="/login">Login</a>
+    <a class="navbar-brand btn btn-success p-2" routerLink="/register">Register</a>
+    <form class="form-inline my-2 my-lg-0 p-2">
+      <input class="form-control mr-sm-3" type="text" placeholder="Enter City Name">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search City Routes</button>
+    </form>
   </nav>
-  <p>
-    RunSmart
-  </p>
-  <p>
-    Let's get started:
-  </p>
-  <a routerLink="/profile">Login</a>
-  <a routerLink="/register">Register</a>
-  <div>
+  <div class="container-fluid">
+    <h1 class="text-center pagination-centered">
+      The best way to run. Period. &nbsp;
+    </h1>
   </div>
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <p>
+        Test Left
+      </p>
+    </div>
+    <div class="col-md-8">
+      <p>
+        Test right
+      </p>
+    </div>
+  </div>
+
+
 </div>
