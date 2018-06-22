@@ -9,6 +9,8 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import {UserServiceClient} from "./services/user.service.client";
 import { HomeComponent } from './home/home.component';
+import { RoutefinderComponent } from './routefinder/routefinder.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    RoutefinderComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,7 @@ export class ProfileComponent implements OnInit {
               private router: Router) { }
 
   user;
-  sections = [];
   isAdmin = false;
-  showSections = false;
 
   update() {
     console.log("Updating");
