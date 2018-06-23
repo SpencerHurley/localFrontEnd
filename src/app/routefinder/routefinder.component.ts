@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RouteFinderServiceClient} from "../services/routefinder.service.client";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-routefinder',
@@ -8,7 +9,8 @@ import {RouteFinderServiceClient} from "../services/routefinder.service.client";
 })
 export class RoutefinderComponent implements OnInit {
 
-  constructor(private service: RouteFinderServiceClient) {
+  constructor(private service: RouteFinderServiceClient,
+              private router: Router) {
     this.Math = Math;
   }
 
@@ -35,9 +37,7 @@ export class RoutefinderComponent implements OnInit {
   }
 
   getSegmentInfo(segmentId) {
-    this.service.findSegmentById(segmentId)
-      .then((response) => this.segmentInfo = response)
-      .then(() => console.log(this.segmentInfo));
+    this.router.navigate(['/findRoutes/' + segmentId]);
   }
 
   ngOnInit() {

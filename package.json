@@ -9,17 +9,19 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild" : "ng build --prod"
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.11",
+    "@angular/cdk": "^6.3.0",
     "@angular/cli": "^6.0.8",
     "@angular/common": "^5.2.11",
     "@angular/compiler": "^5.2.11",
     "@angular/core": "^5.2.11",
     "@angular/forms": "^5.2.11",
     "@angular/http": "^5.2.11",
+    "@angular/material": "^6.3.0",
     "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@angular/platform-server": "^5.2.11",

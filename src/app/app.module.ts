@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { RoutefinderComponent } from './routefinder/routefinder.component';
 import { TeamComponent } from './team/team.component';
 import {RouteFinderServiceClient} from "./services/routefinder.service.client";
+import { SegmentviewerComponent } from './segmentviewer/segmentviewer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {RouteFinderServiceClient} from "./services/routefinder.service.client";
     ProfileComponent,
     HomeComponent,
     RoutefinderComponent,
-    TeamComponent
+    TeamComponent,
+    SegmentviewerComponent
   ],
   imports: [
     BrowserModule,
