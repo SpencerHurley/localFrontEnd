@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+  <h1 class="text-center">Log new run</h1>
+  <br>
+  <br>
+  <input [(ngModel)]="run.title"
+         placeholder="Run Title"
+         class="form-control"/>
+  <br>
+  <input [(ngModel)]="run.length"
+         placeholder="Length of run (miles)"
+         class="form-control"/>
+  <input [(ngModel)]="run.duration"
+         placeholder="Duration of run (minutes)"
+         class="form-control"/>
+  <br>
+  <div class="input-group">
+    <textarea  [(ngModel)]="run.description"
+               class="form-control"
+               aria-label="With textarea"
+               rows="5"
+               placeholder="Enter a run description!"
+    ></textarea>
+  </div>
+  <button  (click)="send()"
+           class="btn btn-primary btn-block">
+    Save Run
+  </button>
+</div>
