@@ -10,7 +10,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:4000/api/login', {
+    return fetch('http://localhost:4000/api/runner/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -50,7 +50,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:4000/api/register', {
+    return fetch('http://localhost:4000/api/runner/register', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',

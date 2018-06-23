@@ -11,15 +11,17 @@ export class SegmentviewerComponent implements OnInit {
 
   constructor(private service: RouteFinderServiceClient,
               private route: ActivatedRoute) {
+    this.Math = Math;
     this.route.params.subscribe(params => this.loadSegment(params['segmentId']));
   }
-
-  segmentInfo;
+  Math;
+  segment;
   loadSegment(id) {
+    console.log("Loading segment " + id);
     this.service.findSegmentById(id)
-      .then((response) => this.segmentInfo = response);
+      .then((response) => this.segment = response)
+      .then(() => console.log(this.segment));
   }
-
   ngOnInit() {}
 
 }

@@ -1,3 +1,22 @@
-<p>
-  segmentviewer works!
-</p>
+<div class="container-fluid text-center justify-content-center">
+
+  <div>
+    <h2>Run Summary:</h2>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Route Name: {{segment.name}}
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        Distance: {{this.Math.round(segment.distance * 10 / 1609) / 10}} miles
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center pagination-center">
+        Total elevation gain: {{segment.total_elevation_gain / 3}} feet
+      </li>
+      <li class="list-group-item d-flex text-center">
+        Marked as hazardous? {{segment.hazardous}}
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-success btn-block">Save this run to Profile</button>
+  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
+</div>
