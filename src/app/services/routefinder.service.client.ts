@@ -1,13 +1,22 @@
 export class RouteFinderServiceClient {
 
-  findRoutesByCity(sw, ne) {
-    sw.lat -= 2;
-    sw.lng -= 2;
-    ne.lat += 2;
-    ne.lng += 2;
+  findRoutesByCity(cityPoint) {
+    console.log(cityPoint);
+    const sw = {
+      lat : 0,
+      lng : 0
+    };
+    const ne = {
+      lat : 0,
+      lng : 0
+    };
 
+    sw.lat = cityPoint.southwest.lat - 0.5;
+    sw.lng = cityPoint.southwest.lng - 0.5;
+    ne.lat = cityPoint.northeast.lat + 0.5;
+    ne.lng = cityPoint.northeast.lng + 0.5;
     return fetch('https://www.strava.com/api/v3/segments/explore?bounds=[' +
-      sw.lat +  "," +
+      sw.lat  +  "," +
       sw.lng + "," +
       ne.lat + "," +
       ne.lng + "]", {

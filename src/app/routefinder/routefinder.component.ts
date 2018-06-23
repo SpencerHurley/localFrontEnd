@@ -22,12 +22,16 @@ export class RoutefinderComponent implements OnInit {
     this.service.findCoordinatesForCity(this.city)
       .then((response) => this.coordinates = response.results[0].geometry.bounds)
       .then(() => console.log(this.coordinates))
-      .then(() => this.service.findRoutesByCity(this.coordinates.northeast, this.coordinates.southwest))
+      .then(() => this.service.findRoutesByCity(this.coordinates))
       .then((response) => this.segments = response.segments)
-      .then(() => this.segments.sort(function(a, b) {
-        return parseFloat(b.distance) - parseFloat(a.distance);
-      }))
-      .then(() => console.log(this.segments));
+      .then(() => {
+        if (this.segments.length === 0) {
+          window.alert("No segments found for this city.");
+        } else {
+          console.log(this.segments);
+        }
+        }
+      );
   }
 
   getSegmentInfo(segmentId) {
