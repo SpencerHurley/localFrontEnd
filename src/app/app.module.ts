@@ -13,6 +13,7 @@ import { RoutefinderComponent } from './routefinder/routefinder.component';
 import { TeamComponent } from './team/team.component';
 import {RouteFinderServiceClient} from "./services/routefinder.service.client";
 import { SegmentviewerComponent } from './segmentviewer/segmentviewer.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,16 @@ import { SegmentviewerComponent } from './segmentviewer/segmentviewer.component'
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    routing,
+    NgCircleProgressModule.forRoot({
+      // set defaults here
+      radius: 100,
+      outerStrokeWidth: 16,
+      innerStrokeWidth: 8,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+    })
   ],
   providers: [
     RouteFinderServiceClient,

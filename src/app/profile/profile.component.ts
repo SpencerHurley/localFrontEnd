@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {User} from "../models/user.model.client";
 import {UserServiceClient} from "../services/user.service.client";
 import {Router} from "@angular/router";
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +18,9 @@ export class ProfileComponent implements OnInit {
 
   update() {
     console.log("Updating");
-    this.service.updateUser(this.user)
+    console.log(this.user);
+
+    this.service.updateRunner(this.user)
       .then(() => {});
   }
 

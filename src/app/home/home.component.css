@@ -1,0 +1,11 @@
+.topLine {
+  border-top: thin solid #ffebfa;
+}
+
+.botLine {
+  border-bottom: thin solid #ffebfa;
+}
+
+h1 {
+  font-size : 60px;
+}

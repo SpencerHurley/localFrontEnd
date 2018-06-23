@@ -16,13 +16,13 @@
     <legend>I am a:</legend>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        <input [(ngModel)]="type" type="radio" class="form-check-input" value="runner" id="optionsRadios1" checked="">
         Runner
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+        <input [(ngModel)]="type" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="coach">
         Coach
       </label>
     </div>

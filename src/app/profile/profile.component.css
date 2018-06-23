@@ -1,0 +1,16 @@
+.verticalLine {
+  border-left: thin solid #ffebfa;
+}
+
+.circle {
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.topLine {
+  border-top: thin solid #ffebfa;
+}
+
+.botLine {
+  border-bottom: thin solid #ffebfa;
+}

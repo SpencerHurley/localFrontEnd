@@ -1,27 +1,58 @@
+<br>
 <div class="container-fluid">
-  <h1>Profile</h1>
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="text-center">My Profile</h1>
+      <br>
+      <br>
+      <input [(ngModel)]="user.username"
+             placeholder="username"
+             class="form-control"/>
+      <input [(ngModel)]="user.firstName"
+             placeholder="first name"
+             class="form-control"/>
+      <input [(ngModel)]="user.lastName"
+             placeholder="lastName"
+             class="form-control"/>
+      <input [(ngModel)]="user.email"
+             placeholder="email"
+             class="form-control"/>
+      <input [(ngModel)]="user.weeklyGoal"
+             placeholder="Weekly Mileage Goal"
+             class="form-control"/>
+      <button  (click)="update()"
+               class="btn btn-primary btn-block">
+        Update
+      </button>
+    </div>
+    <div class="col-md-6 d-flex verticalLine">
+      <div class="container-fluid">
+        <h3 class="text-center">
+          Progress towards weekly mileage goal:
+        </h3>
+        <p class="text-center">
+          10/{{user.weeklyGoal}} miles run in last 7 days
+        </p>
+        <circle-progress class="circle"
+                         [percent]="10 / user.weeklyGoal * 100"
+                         [radius]="100"
+                         [outerStrokeWidth]="16"
+                         [innerStrokeWidth]="8"
+                         [outerStrokeColor]="'#78C000'"
+                         [innerStrokeColor]="'#C7E596'"
+                         [animation]="true"
+                         [animationDuration]="300"
+        ></circle-progress>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="topLine">
+    <br>
+  </div>
 
-  <input [(ngModel)]="user.username"
-         placeholder="username"
-         class="form-control"/>
-  <input [(ngModel)]="user.firstName"
-         placeholder="first name"
-         class="form-control"/>
-  <input [(ngModel)]="user.lastName"
-         placeholder="lastName"
-         class="form-control"/>
-  <input [(ngModel)]="user.email"
-         placeholder="email"
-         class="form-control"/>
-  <input [(ngModel)]="user.goal"
-         placeholder="Weekly Mileage Goal"
-         class="form-control"/>
-  <button  (click)="update()"
-          class="btn btn-primary btn-block">
-    Update
-  </button>
-
-  <a routerLink="/home">Home</a>
+  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
   <a *ngIf="isAdmin" routerLink="/admin">Admin</a>
 
 </div>

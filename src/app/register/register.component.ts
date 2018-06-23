@@ -15,11 +15,15 @@ export class RegisterComponent implements OnInit {
   username;
   password;
   password2;
+  type = '';
   register(username, password, password2) {
     if (password !== password2) {
       window.alert("Passwords do not match.")
       return;
+    } else {
+      console.log(this.type);
     }
+
     this.service
       .createUser(username, password)
       .then(() =>

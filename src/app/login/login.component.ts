@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
     console.log([username, password]);
     this.service
       .login(username, password)
-      .then(user => user.json())
       .then((user) => {
         if (user != null) {
           console.log("Not null");
