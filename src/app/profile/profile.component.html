@@ -23,7 +23,7 @@
         <input
           [(ngModel)]="user.firstName"
           type="text" class="form-control"
-          placeholder="Username"
+          placeholder="First Name"
           aria-label="Username" aria-describedby="basic-addon1">
       </div>
 
@@ -34,7 +34,7 @@
         <input
           [(ngModel)]="user.lastName"
           type="text" class="form-control"
-          placeholder="Username"
+          placeholder="Last Name"
           aria-label="Username" aria-describedby="basic-addon1">
       </div>
 
@@ -45,7 +45,7 @@
         <input
           [(ngModel)]="user.email"
           type="text" class="form-control"
-          placeholder="Username"
+          placeholder="Email"
           aria-label="Username" aria-describedby="basic-addon1">
       </div>
 
@@ -90,6 +90,23 @@
       </div>
     </div>
   </div>
+    <div class="container botLine">
+      <br>
+      <h3 class="text-center">My Teams:</h3>
+      <ul class="list-group justify-content-between">
+        <li *ngFor="let team of teams"
+            class="d-flex list-group-item justify-content-between align-items-center botGreen">
+          <div class="mr-auto p-2">
+            <b>{{team.team.name}}</b>
+          </div>
+          <a class="p-2" routerLink="/team/{{team.team._id}}">Visit Team Page</a>
+        </li>
+      </ul>
+      <br>
+      <a class="btn btn-block btn-success" routerLink="/team">Find More Teams</a>
+      <br>
+    </div>
+
       <div class="container">
         <div>
           <br>

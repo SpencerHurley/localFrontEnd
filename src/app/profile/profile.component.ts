@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   isAdmin = false;
   mileage;
   math;
+  teams;
   update() {
     this.service.updateRunner(this.user)
       .then(() => {});
@@ -46,13 +47,18 @@ export class ProfileComponent implements OnInit {
       });
   }
 
+  getTeams() {
+    this.runService.findTeamsForRunner(this.user._id)
+      .then((response) => this.teams = response);
+  }
+
   ngOnInit() {
     this.service
       .profile()
-      .then((user) => user.json())
       .then(user => this.user = user)
       .then((user) => this.isAdmin = (user.username === 'admin'))
-      .then(() => this.getRuns());
+      .then(() => this.getRuns())
+      .then(() => this.getTeams());
   }
 
 }

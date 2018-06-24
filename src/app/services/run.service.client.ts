@@ -21,4 +21,9 @@ export class RunServiceClient {
       .then(response => response.json());
   }
 
+  findTeamsForRunner(id) {
+    return fetch('http://localhost:4000/api/runner/' + id + '/teams')
+      .then(response => response.json());
+  }
+
 }

@@ -1,36 +1,55 @@
 <app-navbar></app-navbar>
-<div class="container">
+<div class="container-fluid">
   <br>
   <br>
-  <h1 class="text-center pagination-center">{{team.name}}</h1>
+  <div class="botLine">
+    <h1 class="text-center pagination-center">{{team.name}}</h1>
+    <br>
+    <button (click)="joinTeam()"
+            class="btn btn-success text-center pagination-center button">
+      Join Team
+    </button>
+  </div>
 
-  
-
-  <h2>Top Performers:</h2>
-  <br>
-  <br>
-
-    <div *ngFor="let runner of runners">
+  <div class="row">
+    <div class="col-md-4">
       <br>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            Runner : {{runner.runner.firstName}} {{runner.runner.lastName}}
+      <h2>Announcements:</h2>
+
+    </div>
+
+
+    <div class="col-md-8">
+        <div class="container leftLine">
+          <br>
+        <h2>Top Performers:</h2>
+          <br>
+        <div *ngFor="let runner of runners">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                Runner : {{runner.runner.firstName}} {{runner.runner.lastName}}
+              </div>
+              <div class="col-sm">
+                Mileage : {{runner.weeklyMileage}}
+              </div>
+              <div class="col-sm">
+                Average Pace/Mile: {{runner.avgPace}} mins/mile
+              </div>
+              <span class="badge badge-success badge-pill p-2">Visit Profile</span>
+            </div>
           </div>
-          <div class="col-sm">
-            Mileage : {{runner.weeklyMileage}}
-          </div>
-          <div class="col-sm">
-            Average Pace/Mile: {{runner.avgPace}}
-          </div>
+          <br>
+
+          <p><ngb-progressbar [striped]="true" type="warning" [value]="runner.weeklyMileage" [animated]="true"></ngb-progressbar></p>
+          <br>
         </div>
       </div>
-      <br>
-
-      <p><ngb-progressbar [striped]="true" type="warning" [value]="runner.weeklyMileage" [animated]="true"></ngb-progressbar></p>
-
-      <br>
     </div>
+  </div>
+
+
+
 </div>
 
 

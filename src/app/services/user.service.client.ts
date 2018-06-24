@@ -32,7 +32,7 @@ export class UserServiceClient {
     return fetch('http://localhost:4000/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
-      });
+      }).then((res) => res.json());
   }
 
   updateRunner(user) {

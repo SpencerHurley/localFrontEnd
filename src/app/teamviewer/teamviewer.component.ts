@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {TeamServiceClient} from "../services/team.service.client";
 import {RunServiceClient} from "../services/run.service.client";
+import {UserServiceClient} from "../services/user.service.client";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -13,6 +14,7 @@ export class TeamviewerComponent implements OnInit {
 
   constructor(private service: TeamServiceClient,
               private runService: RunServiceClient,
+              private userService: UserServiceClient,
               private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.loadTeam(params['teamId']));
   }
@@ -20,6 +22,20 @@ export class TeamviewerComponent implements OnInit {
   team;
   runners;
   runs;
+  curUser;
+
+  joinTeam() {
+    this.userService.profile()
+      .then((user) => this.curUser = user)
+      .then(() => {
+        if (this.curUser == null) {
+          window.alert('Must be logged in to join team!');
+        } else {
+          this.service.enrollRunnerInTeam(this.team._id);
+          }})
+      .then(() => this.loadTeam(this.team._id));
+  }
+
   loadTeam(teamId) {
     this.service.findTeamById(teamId)
       .then((team) => this.team = team)
@@ -30,35 +46,37 @@ export class TeamviewerComponent implements OnInit {
   findRunners(teamId) {
     this.service.findRunnersForTeam(teamId)
       .then((runners) => this.runners = runners)
-      .then(() => this.findRuns())
-      .then(() => this.sortRunners())
+      .then(() => this.findRunsUpdated())
       .then(() => console.log(this.runners));
   }
 
-  findRuns() {
-    this.runners.forEach(runner => {
-      this.runService.findRunsForUser(runner.runner._id)
-        .then((runs) => {
-          let mileage = 0;
-          let time = 0;
-          runs.forEach((run) => {
-            mileage += run.distance;
-            time += run.duration;
-          });
-          runner.weeklyMileage = mileage;
-          runner.avgPace = Math.round(time * 100 / mileage) / 100;
-        });
+  findRunsUpdated() {
+
+    this.runService.findAllRuns()
+      .then((runs) => {
+        for (let i = 0; i < this.runners.length; i++) {
+          this.runners[i].weeklyMileage = 0;
+          this.runners[i].totalTime = 0;
+          for (let j = 0; j < runs.length; j++) {
+            if (runs[j].owner === this.runners[i].runner._id) {
+              this.runners[i].weeklyMileage += runs[j].distance;
+              this.runners[i].totalTime += runs[j].duration;
+            }
+          }
+          this.runners[i].avgPace = Math.round(this.runners[i].totalTime * 100 / this.runners[i].weeklyMileage) / 100;
+        }
+
+        return this.sortRunners(this.runners);
+      });
+
+  }
+
+  sortRunners(runners) {
+    return runners.sort(function(a, b) {
+      return b.weeklyMileage - a.weeklyMileage;
     });
   }
 
-  sortRunners() {
-    this.runners.sort(function (a, b) {
-      return a.weeklyMileage - b.weeklyMileage;
-    });
-    console.log(this.runners);
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
