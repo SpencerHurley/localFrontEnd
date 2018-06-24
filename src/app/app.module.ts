@@ -19,6 +19,7 @@ import {RunServiceClient} from "./services/run.service.client";
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TeamServiceClient} from "./services/team.service.client";
+import { TeamviewerComponent } from './teamviewer/teamviewer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {TeamServiceClient} from "./services/team.service.client";
     TeamComponent,
     SegmentviewerComponent,
     LogrunComponent,
-    NavbarComponent
+    NavbarComponent,
+    TeamviewerComponent
   ],
   imports: [
     BrowserModule,

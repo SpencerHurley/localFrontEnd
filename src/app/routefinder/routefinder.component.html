@@ -1,6 +1,8 @@
-<div class="container-fluid text-center justify-content-center">
+<app-navbar></app-navbar>
+<div class="container text-center justify-content-center">
   <h1>Enter a city name to find routes near it.</h1>
-
+  <br>
+  <br>
   <input [(ngModel)]="city"
          placeholder="City name"
          class="form-control"/>
@@ -8,15 +10,17 @@
           class="btn btn-primary btn-block">
     Search for routes
   </button>
+  <br>
+  <br>
+  <br>
+      <ul class="list-group justify-content-between">
+        <li *ngFor="let segment of segments"
+            class="d-flex list-group-item justify-content-between align-items-center"
+            (click)="getSegmentInfo(segment.id)">
+          <b class="mr-auto p-2">{{segment.name}}</b>
+          <span class="badge badge-info badge-pill p-2">{{this.Math.round(segment.distance * 10 / 1609) / 10}} miles</span>
+          <span class="badge badge-success badge-pill p-2">More info</span>
+        </li>
+      </ul>
 
-  <ul class="list-group justify-content-between">
-    <li *ngFor="let segment of segments"
-        class="d-flex list-group-item justify-content-between align-items-center"
-        (click)="getSegmentInfo(segment.id)">
-      <b class="mr-auto p-2">{{segment.name}}</b>
-      <span class="badge badge-info badge-pill p-2">{{this.Math.round(segment.distance * 10 / 1609) / 10}} miles</span>
-      <span class="badge badge-success badge-pill p-2">More info</span>
-    </li>
-  </ul>
-  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
 </div>

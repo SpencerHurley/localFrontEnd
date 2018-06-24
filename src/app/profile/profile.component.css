@@ -18,3 +18,7 @@
 .moveDown {
   margin-top: 40px;
 }
+
+.botGreen {
+  border-bottom: thin solid #00ffd4;
+}

@@ -6,7 +6,7 @@ export class TeamServiceClient {
   }
 
   findTeamById(id) {
-    return fetch('http://localhost:4000/api/team' + id)
+    return fetch('http://localhost:4000/api/team/' + id)
       .then(response => response.json());
   }
 
@@ -44,7 +44,7 @@ export class TeamServiceClient {
 
   findRunnersForTeam(id) {
     return fetch('http://localhost:4000/api/team/' + id + '/members')
-      .then(response => response.json);
+      .then(response => response.json());
   }
 
   enrollRunnerInTeam(id) {

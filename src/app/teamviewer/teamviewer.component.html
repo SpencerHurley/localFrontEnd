@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <br>
+  <br>
+  <h1 class="text-center pagination-center">{{team.name}}</h1>
+
+  
+
+  <h2>Top Performers:</h2>
+  <br>
+  <br>
+
+    <div *ngFor="let runner of runners">
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            Runner : {{runner.runner.firstName}} {{runner.runner.lastName}}
+          </div>
+          <div class="col-sm">
+            Mileage : {{runner.weeklyMileage}}
+          </div>
+          <div class="col-sm">
+            Average Pace/Mile: {{runner.avgPace}}
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <p><ngb-progressbar [striped]="true" type="warning" [value]="runner.weeklyMileage" [animated]="true"></ngb-progressbar></p>
+
+      <br>
+    </div>
+</div>
+
+
+
