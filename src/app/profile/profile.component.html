@@ -1,26 +1,68 @@
+<app-navbar></app-navbar>
 <br>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
-      <h1 class="text-center">My Profile</h1>
+      <h1 class="text-center">My Info</h1>
       <br>
-      <br>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Username: &nbsp; &nbsp; </span>
+        </div>
+        <input
+          [(ngModel)]="user.username"
+          type="text" class="form-control"
+          placeholder="Username"
+          aria-label="Username" aria-describedby="basic-addon1">
+      </div>
 
-      <input [(ngModel)]="user.username"
-             placeholder="username"
-             class="form-control"/>
-      <input [(ngModel)]="user.firstName"
-             placeholder="first name"
-             class="form-control"/>
-      <input [(ngModel)]="user.lastName"
-             placeholder="lastName"
-             class="form-control"/>
-      <input [(ngModel)]="user.email"
-             placeholder="email"
-             class="form-control"/>
-      <input [(ngModel)]="user.weeklyGoal"
-             placeholder="Weekly Mileage Goal"
-             class="form-control"/>
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">First name: &nbsp; </span>
+        </div>
+        <input
+          [(ngModel)]="user.firstName"
+          type="text" class="form-control"
+          placeholder="Username"
+          aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Last name: &nbsp; &nbsp; </span>
+        </div>
+        <input
+          [(ngModel)]="user.lastName"
+          type="text" class="form-control"
+          placeholder="Username"
+          aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+        </div>
+        <input
+          [(ngModel)]="user.email"
+          type="text" class="form-control"
+          placeholder="Username"
+          aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="input-group mb-2">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Weekly goal:</span>
+        </div>
+        <input
+          [(ngModel)]="user.weeklyGoal"
+          type="text" class="form-control"
+          placeholder="Username"
+          aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <span class="input-group-text" id="basic-addon1">miles</span>
+        </div>
+      </div>
+      <br>
       <button  (click)="update()"
                class="btn btn-primary btn-block">
         Update
@@ -28,9 +70,9 @@
     </div>
     <div class="col-md-6 d-flex verticalLine">
       <div class="container-fluid">
-        <h3 class="text-center">
+        <h2 class="text-center">
           Progress towards weekly mileage goal:
-        </h3>
+        </h2>
         <p class="text-center">
           10/{{user.weeklyGoal}} miles run in last 7 days
         </p>
@@ -44,17 +86,23 @@
                          [animation]="true"
                          [animationDuration]="300"
         ></circle-progress>
-        <br>
+        <a class="btn btn-success btn-block" routerLink="/newRun">Log New Run</a>
         <br>
       </div>
     </div>
   </div>
   <div class="topLine">
     <br>
+    My runs this week:
+    <ul class="list-group justify-content-between">
+      <li *ngFor="let run of runs"
+          class="d-flex list-group-item justify-content-between align-items-center">
+        <b class="mr-auto p-2">{{run.title}}</b>
+        <span class="badge badge-info badge-pill p-2">{{run.distance}} miles</span>
+        <span class="badge badge-success badge-pill p-2">More info</span>
+      </li>
+    </ul>
   </div>
 
-  <a class="btn btn-success btn-block" routerLink="/newRun">Log New Run</a>
-  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
-  <a *ngIf="isAdmin" routerLink="/admin">Admin</a>
 
 </div>

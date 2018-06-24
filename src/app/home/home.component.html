@@ -1,16 +1,6 @@
 <div>
   <!-- Navigation bar based on Bootswatch @ https://bootswatch.com/darkly/ -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex">
-    <a class="navbar-brand btn btn-success mr-auto p-2" routerLink="">RunSmart</a>
-    <a class="navbar-brand btn btn-success p-2" routerLink="/login">Login</a>
-    <a class="navbar-brand btn btn-success p-2" routerLink="/register">Register</a>
-    <a class="navbar-brand btn btn-success p-2" routerLink="/findRoutes">Search Routes</a>
-  </nav>
-  <div class="topLine botLine">
-    <h1 class="text-center pagination-centered">
-      RunSmart
-    </h1>
-  </div>
+  <app-navbar></app-navbar>
 
   <div class="row">
     <div class="col-md-4">
@@ -24,5 +14,29 @@
       </p>
     </div>
   </div>
-
+  <div class="container">
+    <div class="col-sm-6" style="height:130px;">
+      <div class="form-group">
+        <div class='input-group date' id='datetimepicker8'>
+          <input type='text' class="form-control" />
+          <span class="input-group-addon">
+                    <span class="fa fa-calendar">
+                    </span>
+                </span>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        $('#datetimepicker8').datetimepicker({
+          icons: {
+            time: "fa fa-clock-o",
+            date: "fa fa-calendar",
+            up: "fa fa-arrow-up",
+            down: "fa fa-arrow-down"
+          }
+        });
+      });
+    </script>
+  </div>
 </div>

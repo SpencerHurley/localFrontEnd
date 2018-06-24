@@ -15,6 +15,8 @@ import {RouteFinderServiceClient} from "./services/routefinder.service.client";
 import { SegmentviewerComponent } from './segmentviewer/segmentviewer.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LogrunComponent } from './logrun/logrun.component';
+import {RunServiceClient} from "./services/run.service.client";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { LogrunComponent } from './logrun/logrun.component';
     RoutefinderComponent,
     TeamComponent,
     SegmentviewerComponent,
-    LogrunComponent
+    LogrunComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { LogrunComponent } from './logrun/logrun.component';
   providers: [
     RouteFinderServiceClient,
     UserServiceClient,
+    RunServiceClient
   ],
   bootstrap: [AppComponent]
 })

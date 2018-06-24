@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RunServiceClient} from "../services/run.service.client";
 
 @Component({
   selector: 'app-logrun',
@@ -10,11 +11,14 @@ export class LogrunComponent implements OnInit {
   run = {
     date: new Date()
   };
-  constructor() { }
+  response;
+  constructor(private service: RunServiceClient) { }
 
   send() {
     this.run.date = new Date();
-    console.log(this.run);
+    this.service.createRun(this.run)
+      .then((run) => this.response = run)
+      .then(() => console.log(this.response));
   }
   ngOnInit() {
   }

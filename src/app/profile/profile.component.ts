@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserServiceClient} from "../services/user.service.client";
+import {RunServiceClient} from "../services/run.service.client";
 import {Router} from "@angular/router";
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
@@ -11,19 +12,23 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 export class ProfileComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
+              private runService: RunServiceClient,
               private router: Router) { }
 
   user;
+  runs;
   isAdmin = false;
 
   update() {
-    console.log("Updating");
-    console.log(this.user);
-
     this.service.updateRunner(this.user)
       .then(() => {});
   }
 
+  getRuns() {
+    this.runService.findRunsForUser(this.user._id)
+      .then((response) => this.runs = response)
+      .then(() => console.log(this.runs));
+  }
 
   ngOnInit() {
     this.service
@@ -31,7 +36,7 @@ export class ProfileComponent implements OnInit {
       .then((user) => user.json())
       .then(user => this.user = user)
       .then((user) => this.isAdmin = (user.username === 'admin'))
-      .then(() => console.log(this.user));
+      .then(() => this.getRuns());
   }
 
 }
