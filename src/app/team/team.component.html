@@ -1,3 +1,22 @@
-<p>
-  team works!
-</p>
+<app-navbar></app-navbar>
+<div class="container text-center justify-content-center">
+  <h1>Teams</h1>
+
+  <input [(ngModel)]="name"
+         placeholder="Team name"
+         class="form-control"/>
+  <br>
+  <button (click)="createTeam(name)"
+          class="btn btn-success btn-block">
+    Create team
+  </button>
+
+  <ul class="list-group justify-content-between">
+    <li *ngFor="let team of teams"
+        class="d-flex list-group-item justify-content-between align-items-center"
+        (click)="enroll(team)">
+      <b class="mr-auto p-2">{{team.name}}</b>
+    </li>
+  </ul>
+
+</div>

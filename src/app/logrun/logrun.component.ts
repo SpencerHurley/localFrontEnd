@@ -24,7 +24,8 @@ export class LogrunComponent implements OnInit {
     this.service.createRun(this.run)
       .then((run) => this.response = run)
       .then(() => console.log(this.response))
-      .then(() => this.router.navigate(['/profile']));
+      .then(() => window.alert("Run logged!"));
+      // .then(() => this.router.navigate(['/profile']));
   }
   ngOnInit() {
   }

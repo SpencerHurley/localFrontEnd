@@ -3,7 +3,7 @@
 }
 
 .circle {
-  margin-left: 200px;
+  margin-left: 250px;
   margin-right: 200px;
 }
 
@@ -13,4 +13,8 @@
 
 .botLine {
   border-bottom: thin solid #ffebfa;
+}
+
+.moveDown {
+  margin-top: 40px;
 }

@@ -1,17 +1,18 @@
+<app-navbar></app-navbar>
 <div class="container-fluid ">
   <br>
   <h1 class="text-center">Log new run</h1>
-  <br>
-  <br>
+  <h6>Title</h6>
   <input [(ngModel)]="run.title"
          placeholder="Run Title"
-         class="form-control"/>
+         class="form-control medium"/>
   <br>
 
+  <h6>Date of Run</h6>
   <form class="form-inline">
     <div class="form-group">
       <div class="input-group">
-        <input class="form-control" placeholder="yyyy-mm-dd"
+        <input class="form-control medium" placeholder="yyyy-mm-dd"
                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
@@ -24,26 +25,30 @@
 
   <br>
 
+  <h6>Run Distance:</h6>
   <input [(ngModel)]="run.distance"
          placeholder="Length of run (miles)"
-         class="form-control"/>
+         class="form-control medium"/>
+  <br>
+  <h6>Run Duration (Minutes)</h6>
   <input [(ngModel)]="run.duration"
          placeholder="Duration of run (minutes)"
-         class="form-control"/>
+         class="form-control medium"/>
   <br>
+  <h6>Description</h6>
   <div class="input-group">
     <textarea  [(ngModel)]="run.description"
                class="form-control"
                aria-label="With textarea"
                rows="5"
-               placeholder="Enter a run description!"
+               placeholder="Enter a run description - How was it? Was the weather good?"
     ></textarea>
   </div>
 
   <button  (click)="send()"
-           class="btn btn-success btn-block">
+           class="btn btn-success">
     Save Run
   </button>
-  <a class="btn btn-danger btn-block" routerLink="/profile">Cancel</a>
+  <a class="btn btn-danger" routerLink="/profile">Cancel</a>
 
 </div>

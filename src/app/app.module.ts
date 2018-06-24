@@ -18,6 +18,7 @@ import { LogrunComponent } from './logrun/logrun.component';
 import {RunServiceClient} from "./services/run.service.client";
 import { NavbarComponent } from './navbar/navbar.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {TeamServiceClient} from "./services/team.service.client";
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
   providers: [
     RouteFinderServiceClient,
     UserServiceClient,
-    RunServiceClient
+    RunServiceClient,
+    TeamServiceClient
   ],
   bootstrap: [AppComponent]
 })

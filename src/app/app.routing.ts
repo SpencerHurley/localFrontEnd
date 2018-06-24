@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {RoutefinderComponent} from "./routefinder/routefinder.component";
 import {SegmentviewerComponent} from "./segmentviewer/segmentviewer.component";
 import {LogrunComponent} from "./logrun/logrun.component";
+import {TeamComponent} from "./team/team.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,7 +17,9 @@ const appRoutes: Routes = [
   {path: 'findRoutes', component: RoutefinderComponent},
   {path: 'findRoutes/:segmentId', component: SegmentviewerComponent},
   {path: 'newRun', component : LogrunComponent},
-  { path: '**', component: HomeComponent} // last
+  {path: 'team', component : TeamComponent},
+  {path: 'team/:teamId', component: TeamViewerComponent},
+  {path: '**', component: HomeComponent} // last
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

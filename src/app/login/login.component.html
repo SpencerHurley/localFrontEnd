@@ -1,4 +1,5 @@
-<div class="container-fluid text-center justify-content-center">
+<app-navbar></app-navbar>
+<div class="container text-center justify-content-center">
   <h1>Login</h1>
 
   <input [(ngModel)]="username"
@@ -7,13 +8,12 @@
   <input [(ngModel)]="password"
          placeholder="password"
          class="form-control"/>
+  <br>
   <button (click)="login(username, password)"
-          class="btn btn-primary btn-block">
+          class="btn btn-success btn-block">
     Login
   </button>
   <p>
 
   </p>
-  <a class="btn btn-success btn-block" routerLink="/register">Register</a>
-  <a class="btn btn-success btn-block" routerLink="/home">Home</a>
 </div>

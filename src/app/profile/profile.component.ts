@@ -13,12 +13,15 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
               private runService: RunServiceClient,
-              private router: Router) { }
+              private router: Router) {
+    this.math = Math;
+  }
 
   user;
   runs;
   isAdmin = false;
   mileage;
+  math;
   update() {
     this.service.updateRunner(this.user)
       .then(() => {});
