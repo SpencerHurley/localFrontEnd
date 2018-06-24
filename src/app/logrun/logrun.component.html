@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid ">
   <br>
   <h1 class="text-center">Log new run</h1>
   <br>
@@ -7,7 +7,24 @@
          placeholder="Run Title"
          class="form-control"/>
   <br>
-  <input [(ngModel)]="run.length"
+
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+            <img src="fa-calendar" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <br>
+
+  <input [(ngModel)]="run.distance"
          placeholder="Length of run (miles)"
          class="form-control"/>
   <input [(ngModel)]="run.duration"
@@ -22,6 +39,7 @@
                placeholder="Enter a run description!"
     ></textarea>
   </div>
+
   <button  (click)="send()"
            class="btn btn-success btn-block">
     Save Run

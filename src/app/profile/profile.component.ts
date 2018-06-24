@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
   user;
   runs;
   isAdmin = false;
-
+  mileage;
   update() {
     this.service.updateRunner(this.user)
       .then(() => {});
@@ -27,7 +27,20 @@ export class ProfileComponent implements OnInit {
   getRuns() {
     this.runService.findRunsForUser(this.user._id)
       .then((response) => this.runs = response)
-      .then(() => console.log(this.runs));
+      .then(() => console.log(this.runs))
+      .then(() => {
+        const today = new Date();
+        const previousweek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+        this.runs = this.runs.filter(function(a) {
+          const d = new Date(a.date);
+          return previousweek.getTime() < d.getTime();
+          });
+        })
+      .then(() => {
+        this.mileage = 0;
+        this.runs.forEach(e => this.mileage += e.distance);
+        console.log(this.mileage);
+      });
   }
 
   ngOnInit() {

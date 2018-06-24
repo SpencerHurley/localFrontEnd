@@ -74,10 +74,10 @@
           Progress towards weekly mileage goal:
         </h2>
         <p class="text-center">
-          10/{{user.weeklyGoal}} miles run in last 7 days
+          {{mileage}}/{{user.weeklyGoal}} miles run in last 7 days
         </p>
         <circle-progress class="circle"
-                         [percent]="10 / user.weeklyGoal * 100"
+                         [percent]="mileage / user.weeklyGoal * 100"
                          [radius]="100"
                          [outerStrokeWidth]="16"
                          [innerStrokeWidth]="8"
