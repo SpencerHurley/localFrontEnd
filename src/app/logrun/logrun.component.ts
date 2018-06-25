@@ -24,6 +24,7 @@ export class LogrunComponent implements OnInit {
       this.run.date = new Date(this.model.year, this.model.month - 1, this.model.day);
       console.log(this.run.date);
     }
+    this.run.stars = 0;
     this.service.createRun(this.run)
       .then((run) => this.response = run)
       .then(() => console.log(this.response))

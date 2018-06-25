@@ -11,6 +11,7 @@ import {UserServiceClient} from "../services/user.service.client";
 export class HomeComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
+              private router: Router,
               private runService: RunServiceClient) {
     this.math = Math;
   }
@@ -42,6 +43,10 @@ export class HomeComponent implements OnInit {
     return runners.sort(function(a, b) {
       return b.weeklyMileage - a.weeklyMileage;
     });
+  }
+
+  navRun(run) {
+    this.router.navigate(['/run/' + run._id]);
   }
 
   ngOnInit() {

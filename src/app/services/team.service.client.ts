@@ -1,17 +1,17 @@
 export class TeamServiceClient {
 
   findAllTeams() {
-    return fetch('http://localhost:4000/api/team')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com//api/team')
       .then(response => response.json());
   }
 
   findTeamById(id) {
-    return fetch('http://localhost:4000/api/team/' + id)
+    return fetch('https://sheltered-fjord-29617.herokuapp.com//api/team/' + id)
       .then(response => response.json());
   }
 
   createTeam(team) {
-    return fetch('http://localhost:4000/api/team', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com//api/team', {
       method: 'post',
       body: JSON.stringify(team),
       credentials: "include",

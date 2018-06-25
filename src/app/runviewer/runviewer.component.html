@@ -4,7 +4,13 @@
 <div class="container">
   <ul class="list-group">
     <li class="list-group-item">
+      Completed By: {{owner.firstName}} {{owner.lastName}}
+    </li>
+    <li class="list-group-item">
       Title: {{run.title}}
+    </li>
+    <li class="list-group-item">
+      Date: {{run.date | date:'shortDate'}}
     </li>
     <li class="list-group-item">
       Distance: {{run.distance}} miles
@@ -12,7 +18,13 @@
     <li class="list-group-item">
       Description: {{run.description}}
     </li>
+    <li class="list-group-item">
+      Stars: {{run.stars || 0}}
+    </li>
   </ul>
+  <Button class="btn btn-success btn-block" (click)="star()">
+    Give Star!
+  </Button>
 </div>
 
 <div *ngIf="segment" class="container">
