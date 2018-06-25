@@ -11,9 +11,12 @@ import {UserServiceClient} from "../services/user.service.client";
 export class HomeComponent implements OnInit {
 
   constructor(private service: UserServiceClient,
-              private runService: RunServiceClient) { }
+              private runService: RunServiceClient) {
+    this.math = Math;
+  }
   runners;
   runs;
+  math;
   showRuns= false;
 
   findRunsUpdated() {

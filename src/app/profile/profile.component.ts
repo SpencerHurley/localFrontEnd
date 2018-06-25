@@ -26,7 +26,8 @@ export class ProfileComponent implements OnInit {
   segments;
   update() {
     this.service.updateRunner(this.user)
-      .then(() => {});
+      .then(() => this.service.profile())
+      .then((user) => this.user = user);
   }
 
   getRuns() {

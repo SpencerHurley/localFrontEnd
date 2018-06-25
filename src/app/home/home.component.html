@@ -19,7 +19,7 @@
                 Runner : {{runner.firstName}} {{runner.lastName}}
               </div>
               <div class="col-sm">
-                Mileage : {{runner.weeklyMileage}}
+                Mileage : {{this.math.round(runner.weeklyMileage * 100) / 100}}
               </div>
               <span class="badge badge-success badge-pill p-2 col-sm">Average Pace/Mile: {{runner.avgPace}} mins</span>
             </div>

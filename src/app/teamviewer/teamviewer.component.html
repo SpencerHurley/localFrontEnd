@@ -19,10 +19,10 @@
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            Runner : {{runner.runner.firstName}} {{runner.runner.lastName}}
+            Runner : {{runner.runner.username}}
           </div>
           <div class="col-sm">
-            Mileage : {{runner.weeklyMileage}}
+            Mileage : {{this.math.round(runner.weeklyMileage)}}
           </div>
           <div class="col-sm">
             Average Pace/Mile: {{runner.avgPace}} mins/mile

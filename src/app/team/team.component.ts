@@ -27,6 +27,8 @@ export class TeamComponent implements OnInit {
     const team = {
       name : name
     }
-    this.service.createTeam(team);
+    this.service.createTeam(team)
+      .then(() => this.service.findAllTeams())
+      .then((teams) => this.teams = teams);
   }
 }

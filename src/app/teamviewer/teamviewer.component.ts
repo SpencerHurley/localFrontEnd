@@ -16,9 +16,11 @@ export class TeamviewerComponent implements OnInit {
               private runService: RunServiceClient,
               private userService: UserServiceClient,
               private route: ActivatedRoute) {
+    this.math = Math;
     this.route.params.subscribe(params => this.loadTeam(params['teamId']));
   }
 
+  math;
   team;
   runners;
   runs;
