@@ -11,7 +11,7 @@ export class TeamServiceClient {
   }
 
   createTeam(team) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com//api/team', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/team', {
       method: 'post',
       body: JSON.stringify(team),
       credentials: "include",
