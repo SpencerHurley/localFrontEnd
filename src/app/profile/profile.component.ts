@@ -49,8 +49,9 @@ export class ProfileComponent implements OnInit {
   }
 
   getSegments() {
-    this.segments.findSegments(this.user._id)
-      .then((segments) => this.segments = segments);
+    this.service.findSegments(this.user._id)
+      .then((segments) => this.segments = segments)
+      .then(() => console.log(this.segments));
   }
 
   getTeams() {
@@ -63,6 +64,11 @@ export class ProfileComponent implements OnInit {
       .profile()
       .then(user => this.user = user)
       .then((user) => this.isAdmin = (user.username === 'admin'))
+      .then(() => {
+        if (this.user == null) {
+          this.router.navigate(['/home']);
+        }
+      })
       .then(() => this.getRuns())
       .then(() => this.getTeams())
       .then(() => this.getSegments());
