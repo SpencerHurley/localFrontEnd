@@ -14,10 +14,12 @@ export class HomeComponent implements OnInit {
               private runService: RunServiceClient) { }
   runners;
   runs;
+  showRuns= false;
 
   findRunsUpdated() {
     this.runService.findAllRuns()
       .then((runs) => {
+        this.runs = runs;
         for (let i = 0; i < this.runners.length; i++) {
           this.runners[i].weeklyMileage = 0;
           this.runners[i].totalTime = 0;
@@ -29,7 +31,6 @@ export class HomeComponent implements OnInit {
           }
           this.runners[i].avgPace = Math.round(this.runners[i].totalTime * 100 / this.runners[i].weeklyMileage) / 100;
         }
-        this.runs = runs;
         return this.sortRunners(this.runners);
       });
   }
@@ -43,7 +44,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.service.findAllRunners()
       .then((runners) => this.runners = runners)
-      .then(() => this.findRunsUpdated());
+      .then(() => this.findRunsUpdated())
+      .then(() => console.log(this.runs));
   }
 
 }

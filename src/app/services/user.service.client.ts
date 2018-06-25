@@ -69,4 +69,9 @@ export class UserServiceClient {
       }
     });
   }
+
+  findSegments(runnerId) {
+    return fetch('http://localhost:4000/api/runner/' + runnerId + '/segments')
+      .then(res => res.json());
+  }
 }

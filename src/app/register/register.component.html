@@ -17,21 +17,6 @@
          placeholder="verify password"
          class="form-control"/>
   <br>
-  <fieldset class="form-group">
-    <legend>I am a:</legend>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input [(ngModel)]="type" type="radio" class="form-check-input" value="runner" id="optionsRadios1" checked="">
-        Runner
-      </label>
-    </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input [(ngModel)]="type" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="coach">
-        Coach
-      </label>
-    </div>
-  </fieldset>
   <button (click)="register(username, password, password2)"
           class="btn btn-success btn-block">
     Register

@@ -1,22 +1,22 @@
 <app-navbar></app-navbar>
-<div class="container-fluid text-center justify-content-center">
-
+<div class="container text-center justify-content-center">
   <div>
     <h2>Run Summary:</h2>
     <ul class="list-group">
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center m-2">
         Route Name: {{segment.name}}
       </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center m-2">
         Distance: {{this.Math.round(segment.distance * 10 / 1609) / 10}} miles
       </li>
-      <li class="list-group-item d-flex justify-content-between align-items-center pagination-center">
+      <li class="list-group-item d-flex justify-content-between align-items-center pagination-center m-2">
         Total elevation gain: {{this.Math.round(segment.total_elevation_gain * 10/ 3) / 10}} feet
       </li>
-      <li class="list-group-item d-flex text-center">
+      <li class="list-group-item d-flex text-center m-2">
         Marked as hazardous? {{segment.hazardous}}
       </li>
     </ul>
   </div>
-  <button class="btn btn-success btn-block">Save this run to my Profile</button>
+  <button (click)="save()" class="btn btn-success btn-block">Save this run to my Profile</button>
+
 </div>

@@ -23,6 +23,7 @@ export class ProfileComponent implements OnInit {
   mileage;
   math;
   teams;
+  segments;
   update() {
     this.service.updateRunner(this.user)
       .then(() => {});
@@ -47,6 +48,11 @@ export class ProfileComponent implements OnInit {
       });
   }
 
+  getSegments() {
+    this.segments.findSegments(this.user._id)
+      .then((segments) => this.segments = segments);
+  }
+
   getTeams() {
     this.runService.findTeamsForRunner(this.user._id)
       .then((response) => this.teams = response);
@@ -58,7 +64,8 @@ export class ProfileComponent implements OnInit {
       .then(user => this.user = user)
       .then((user) => this.isAdmin = (user.username === 'admin'))
       .then(() => this.getRuns())
-      .then(() => this.getTeams());
+      .then(() => this.getTeams())
+      .then(() => this.getSegments());
   }
 
 }
