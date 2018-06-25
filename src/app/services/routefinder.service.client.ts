@@ -11,10 +11,10 @@ export class RouteFinderServiceClient {
       lng : 0
     };
 
-    sw.lat = cityPoint.southwest.lat - 0.5;
-    sw.lng = cityPoint.southwest.lng - 0.5;
-    ne.lat = cityPoint.northeast.lat + 0.5;
-    ne.lng = cityPoint.northeast.lng + 0.5;
+    sw.lat = cityPoint.southwest.lat - 1;
+    sw.lng = cityPoint.southwest.lng - 1;
+    ne.lat = cityPoint.northeast.lat + 1;
+    ne.lng = cityPoint.northeast.lng + 1;
     return fetch('https://www.strava.com/api/v3/segments/explore?bounds=[' +
       sw.lat  +  "," +
       sw.lng + "," +

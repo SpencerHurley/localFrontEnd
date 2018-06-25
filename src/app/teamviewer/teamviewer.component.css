@@ -5,3 +5,8 @@
 .botLine {
   border-bottom : thin solid white;
 }
+
+.center {
+  margin-left: 45%;
+  margin-right: 45%
+}

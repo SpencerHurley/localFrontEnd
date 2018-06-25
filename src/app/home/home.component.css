@@ -6,7 +6,11 @@
   border-bottom: thin solid #ffebfa;
 }
 
+.verticalLine {
+  border-left: thin solid #ffebfa;
+}
+
 h1 {
-  font-size : 60px;
+  font-size : 80px;
 }
 

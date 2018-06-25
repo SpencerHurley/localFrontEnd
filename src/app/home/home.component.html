@@ -1,17 +1,45 @@
 <div class="home">
   <!-- Navigation bar based on Bootswatch @ https://bootswatch.com/darkly/ -->
   <app-navbar></app-navbar>
+  <h1 class="text-center">RunSmart</h1>
+  <div class="botLine">
+    <br>
+  </div>
 
   <div class="row">
     <div class="col-md-4">
-      <p>
-        Test Left
-      </p>
+      <div class="container-fluid">
+        <br>
+        <h3>Recent Member runs:</h3>
+      </div>
+
     </div>
-    <div class="col-md-8">
-      <p>
-        Test right
-      </p>
+    <div class="col-md-8 verticalLine container-fluid">
+      <div class="container-fluid">
+        <br>
+        <h3>Top Performers: </h3>
+        <br>
+        <div *ngFor="let runner of runners">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                Runner : {{runner.firstName}} {{runner.lastName}}
+              </div>
+              <div class="col-sm">
+                Mileage : {{runner.weeklyMileage}}
+              </div>
+              <div class="col-sm">
+                Average Pace/Mile: {{runner.avgPace}} mins/mile
+              </div>
+              <span class="badge badge-success badge-pill p-2">Visit Profile</span>
+            </div>
+          </div>
+          <br>
+
+          <p><ngb-progressbar [striped]="true" type="warning" [value]="runner.weeklyMileage + 20" [animated]="true"></ngb-progressbar></p>
+          <br>
+        </div>
+      </div>
     </div>
   </div>
 </div>

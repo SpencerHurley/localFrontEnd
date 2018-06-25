@@ -5,6 +5,11 @@ export class UserServiceClient {
       .then(response => response.json());
   }
 
+  findAllRunners() {
+    return fetch('http://localhost:4000/api/runner')
+      .then(response => response.json());
+  }
+
   login(username, password) {
     const credentials = {
       username: username,
