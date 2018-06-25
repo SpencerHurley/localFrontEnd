@@ -68,12 +68,13 @@ export class ProfileComponent implements OnInit {
     this.service
       .profile()
       .then(user => this.user = user)
-      .then((user) => this.isAdmin = (user.username === 'admin'))
       .then(() => {
         if (this.user == null) {
-          this.router.navigate(['/home']);
+          this.router.navigate(['/register']);
+          return;
         }
       })
+      .then((user) => this.isAdmin = (this.user.username === 'admin'))
       .then(() => this.getRuns())
       .then(() => this.getTeams())
       .then(() => this.getSegments());
