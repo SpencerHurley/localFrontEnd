@@ -13,9 +13,7 @@ export class LogrunComponent implements OnInit {
   constructor(private service: RunServiceClient,
               private userService: UserServiceClient,
               private router: Router) { }
-  run = {
-    date: new Date()
-  };
+  run;
   model;
   user;
   response;
