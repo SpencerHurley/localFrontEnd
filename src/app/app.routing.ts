@@ -9,6 +9,8 @@ import {LogrunComponent} from "./logrun/logrun.component";
 import {TeamComponent} from "./team/team.component";
 import {TeamviewerComponent} from "./teamviewer/teamviewer.component";
 import {RunviewerComponent} from "./runviewer/runviewer.component";
+import {AdminComponent} from "./admin/admin.component";
+import {RunnerviewComponent} from "./runnerview/runnerview.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -22,6 +24,8 @@ const appRoutes: Routes = [
   {path: 'run/:runId', component : RunviewerComponent},
   {path: 'team', component : TeamComponent},
   {path: 'team/:teamId', component: TeamviewerComponent},
+  {path: 'runner/:runnerId', component: RunnerviewComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '**', component: HomeComponent} // last
 ];
 

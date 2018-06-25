@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <br>
+  <h3 class="text-center">Admin Page</h3>
+  <br>
+  <ul class="list-group">
+    <li *ngFor="let runner of runners" class="list-group-item" (click)="nav(runner._id)">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            Runner : {{runner.username}}
+          </div>
+          <span class="badge badge-success badge-pill p-2">Visit Profile</span>
+        </div>
+      </div>
+      <br>
+    </li>
+  </ul>
+  <br>
+  <br>
+
+  <input [(ngModel)]="username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="password"
+         placeholder="password"
+         class="form-control"/>
+  <input [(ngModel)]="password2"
+         placeholder="verify password"
+         class="form-control"/>
+  <button (click)="register(username, password, password2)"
+          class="btn btn-success btn-block">
+    Create new user
+  </button>
+
+</div>
+

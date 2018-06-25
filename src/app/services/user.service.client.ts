@@ -74,4 +74,10 @@ export class UserServiceClient {
     return fetch('http://localhost:4000/api/runner/' + runnerId + '/segments')
       .then(res => res.json());
   }
+
+  deleteUser(user) {
+    return fetch('http://localhost:4000/api/runner/' + user._id, {
+      method: 'delete'
+    }).then(res => res.json());
+  }
 }

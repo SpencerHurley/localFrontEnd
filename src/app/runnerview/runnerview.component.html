@@ -1,0 +1,71 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <h1>Edit/Delete user</h1>
+  <br>
+  <br>
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Username: &nbsp; &nbsp; </span>
+    </div>
+    <input
+      [(ngModel)]="user.username"
+      type="text" class="form-control"
+      placeholder="Username"
+      aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">First name: &nbsp; </span>
+    </div>
+    <input
+      [(ngModel)]="user.firstName"
+      type="text" class="form-control"
+      placeholder="First Name"
+      aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Last name: &nbsp; &nbsp; </span>
+    </div>
+    <input
+      [(ngModel)]="user.lastName"
+      type="text" class="form-control"
+      placeholder="Last Name"
+      aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Email: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+    </div>
+    <input
+      [(ngModel)]="user.email"
+      type="text" class="form-control"
+      placeholder="Email"
+      aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+
+  <div class="input-group mb-2">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Weekly goal:</span>
+    </div>
+    <input
+      [(ngModel)]="user.weeklyGoal"
+      type="text" class="form-control"
+      placeholder="Username"
+      aria-label="Username" aria-describedby="basic-addon1">
+    <div class="input-group-append">
+      <span class="input-group-text" id="basic-addon1">miles</span>
+    </div>
+  </div>
+  <button  (click)="update()"
+           class="btn btn-info btn-block moveDown">
+    Update Info
+  </button>
+  <button (click)="deleteUser()" class="btn btn-danger btn-block">
+    Delete user
+  </button>
+</div>

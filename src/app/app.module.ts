@@ -22,6 +22,8 @@ import {TeamServiceClient} from "./services/team.service.client";
 import { TeamviewerComponent } from './teamviewer/teamviewer.component';
 import {SegmentServiceClient} from "./services/segment.service.client";
 import { RunviewerComponent } from './runviewer/runviewer.component';
+import { AdminComponent } from './admin/admin.component';
+import { RunnerviewComponent } from './runnerview/runnerview.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { RunviewerComponent } from './runviewer/runviewer.component';
     LogrunComponent,
     NavbarComponent,
     TeamviewerComponent,
-    RunviewerComponent
+    RunviewerComponent,
+    AdminComponent,
+    RunnerviewComponent
   ],
   imports: [
     BrowserModule,
