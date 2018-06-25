@@ -15,4 +15,9 @@ export class SegmentServiceClient {
     })
       .then(response => response.json());
   }
+
+  findSegmentById(id) {
+    return fetch('http://localhost:4000/api/segment/' + id)
+      .then(response => response.json());
+  }
 }

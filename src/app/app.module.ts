@@ -21,6 +21,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TeamServiceClient} from "./services/team.service.client";
 import { TeamviewerComponent } from './teamviewer/teamviewer.component';
 import {SegmentServiceClient} from "./services/segment.service.client";
+import { RunviewerComponent } from './runviewer/runviewer.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {SegmentServiceClient} from "./services/segment.service.client";
     SegmentviewerComponent,
     LogrunComponent,
     NavbarComponent,
-    TeamviewerComponent
+    TeamviewerComponent,
+    RunviewerComponent
   ],
   imports: [
     BrowserModule,

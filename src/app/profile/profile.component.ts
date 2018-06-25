@@ -59,6 +59,10 @@ export class ProfileComponent implements OnInit {
       .then((response) => this.teams = response);
   }
 
+  nav(runId) {
+    this.router.navigate(['/run/' + runId]);
+  }
+
   ngOnInit() {
     this.service
       .profile()

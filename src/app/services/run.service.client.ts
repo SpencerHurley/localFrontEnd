@@ -9,6 +9,11 @@ export class RunServiceClient {
       .then(response => response.json());
   }
 
+  findRunById(id) {
+    return fetch('http://localhost:4000/api/run/' + id)
+      .then(response => response.json());
+  }
+
   createRun(run) {
     return fetch('http://localhost:4000/api/run', {
       method: 'post',
