@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RunServiceClient} from "../services/run.service.client";
+import {UserServiceClient} from "../services/user.service.client";
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Router} from "@angular/router";
 
@@ -10,12 +11,16 @@ import {Router} from "@angular/router";
 })
 export class LogrunComponent implements OnInit {
   constructor(private service: RunServiceClient,
+              private userService: UserServiceClient,
               private router: Router) { }
   run = {
     date: new Date()
   };
-  response;
   model;
+  user;
+  response;
+  segments;
+  test;
   send() {
     if (this.model != null) {
       this.run.date = new Date(this.model.year, this.model.month - 1, this.model.day);
@@ -28,6 +33,9 @@ export class LogrunComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.userService.profile()
+      .then((user) => this.user = user)
+      .then(() => this.userService.findSegments(this.user._id))
+      .then((segments) => this.segments = segments);
   }
-
 }

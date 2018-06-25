@@ -40,12 +40,20 @@
     <textarea  [(ngModel)]="run.description"
                class="form-control"
                aria-label="With textarea"
-               rows="5"
+               rows="2"
                placeholder="Enter a run description - How was it? Was the weather good?"
     ></textarea>
   </div>
+  <br>
+  <h6>Route</h6>
+  <select [(ngModel)]="run.route" class="custom-select form-control medium" id="inlineFormCustomSelect">
+    <option selected>Choose...</option>
+    <option *ngFor="let segment of segments" value="{{segment.stravaId}}">{{segment.name}}</option>
+  </select>
+  <br>
+  <br>
 
-  <button  (click)="send()"
+  <button (click)="send()"
            class="btn btn-success">
     Save Run
   </button>
