@@ -1,11 +1,11 @@
 export class RunServiceClient {
   findAllRuns() {
-    return fetch('http://localhost:4000/api/run')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run')
       .then(response => response.json());
   }
 
   findRunsForUser(id) {
-    return fetch('http://localhost:4000/api/runner/' + id + '/runs')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + id + '/runs')
       .then(response => response.json());
   }
 
@@ -15,7 +15,7 @@ export class RunServiceClient {
   }
 
   createRun(run) {
-    return fetch('http://localhost:4000/api/run', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run', {
       method: 'post',
       body: JSON.stringify(run),
       credentials: "include",
@@ -27,7 +27,7 @@ export class RunServiceClient {
   }
 
   findTeamsForRunner(id) {
-    return fetch('http://localhost:4000/api/runner/' + id + '/teams')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + id + '/teams')
       .then(response => response.json());
   }
 

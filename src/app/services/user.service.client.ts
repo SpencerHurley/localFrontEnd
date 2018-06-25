@@ -1,12 +1,12 @@
 export class UserServiceClient {
 
   findRunnerById(userId) {
-    return fetch('http://localhost:4000/api/runner/' + userId)
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + userId)
       .then(response => response.json());
   }
 
   findAllRunners() {
-    return fetch('http://localhost:4000/api/runner')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner')
       .then(response => response.json());
   }
 
@@ -15,7 +15,7 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('http://localhost:4000/api/login', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -27,21 +27,21 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('http://localhost:4000/api/logout', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/logout', {
       method: 'post',
       credentials: 'include'
     });
   }
 
   profile() {
-    return fetch('http://localhost:4000/api/profile',
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
       }).then((res) => res.json());
   }
 
   updateRunner(user) {
-    return fetch('http://localhost:4000/api/runner', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'put',
@@ -60,7 +60,7 @@ export class UserServiceClient {
       lastName: '',
       weeklyGoal: 30
     };
-    return fetch('http://localhost:4000/api/runner/register', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/register', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
@@ -71,12 +71,12 @@ export class UserServiceClient {
   }
 
   findSegments(runnerId) {
-    return fetch('http://localhost:4000/api/runner/' + runnerId + '/segments')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + runnerId + '/segments')
       .then(res => res.json());
   }
 
   deleteUser(user) {
-    return fetch('http://localhost:4000/api/runner/' + user._id, {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + user._id, {
       method: 'delete'
     }).then(res => res.json());
   }

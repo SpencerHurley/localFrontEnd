@@ -23,7 +23,7 @@ export class TeamServiceClient {
   }
 
   updateTeam(team) {
-    return fetch('http://localhost:4000/api/team', {
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/team', {
       method: 'put',
       body: JSON.stringify(team),
       credentials: "include",
@@ -35,7 +35,7 @@ export class TeamServiceClient {
   }
 
   deleteTeam(id) {
-    return fetch('http://localhost:4000/api/team' + id,
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/team' + id,
       {
         method: 'delete'
       })
@@ -43,12 +43,12 @@ export class TeamServiceClient {
   }
 
   findRunnersForTeam(id) {
-    return fetch('http://localhost:4000/api/team/' + id + '/members')
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/team/' + id + '/members')
       .then(response => response.json());
   }
 
   enrollRunnerInTeam(id) {
-    return fetch('http://localhost:4000/api/team/' + id + '/enroll',
+    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/team/' + id + '/enroll',
       {
         credentials: "include",
         method: "post"
