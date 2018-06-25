@@ -1,11 +1,11 @@
 export class SegmentServiceClient {
   findAllSegments() {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/segment')
+    return fetch('http://localhost:4000/api/segment')
       .then(response => response.json());
   }
 
   createSegment(segment) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/segment', {
+    return fetch('http://localhost:4000/api/segment', {
       method: 'post',
       body: JSON.stringify(segment),
       credentials: "include",
@@ -17,7 +17,7 @@ export class SegmentServiceClient {
   }
 
   findSegmentById(id) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/segment/' + id)
+    return fetch('http://localhost:4000/api/segment/' + id)
       .then(response => response.json());
   }
 }

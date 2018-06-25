@@ -1,22 +1,22 @@
 
 export class RunServiceClient {
   findAllRuns() {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run')
+    return fetch('http://localhost:4000/api/run')
       .then(response => response.json());
   }
 
   findRunsForUser(id) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + id + '/runs')
+    return fetch('http://localhost:4000/api/runner/' + id + '/runs')
       .then(response => response.json());
   }
 
   findRunById(id) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run/' + id)
+    return fetch('http://localhost:4000/api/run/' + id)
       .then(response => response.json());
   }
 
   createRun(run) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run', {
+    return fetch('http://localhost:4000/api/run', {
       method: 'post',
       body: JSON.stringify(run),
       credentials: "include",
@@ -28,12 +28,12 @@ export class RunServiceClient {
   }
 
   findTeamsForRunner(id) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/runner/' + id + '/teams')
+    return fetch('http://localhost:4000/api/runner/' + id + '/teams')
       .then(response => response.json());
   }
 
   starRun(id) {
-    return fetch('https://sheltered-fjord-29617.herokuapp.com/api/run/' + id + '/star', {
+    return fetch('http://localhost:4000/api/run/' + id + '/star', {
       method: 'post'
     })
       .then((response) => response.json());
