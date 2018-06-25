@@ -37,7 +37,8 @@ export class UserServiceClient {
     return fetch('https://sheltered-fjord-29617.herokuapp.com/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
-      }).then((res) => res.json());
+      })
+      .then((user) => user.json());
   }
 
   updateRunner(user) {

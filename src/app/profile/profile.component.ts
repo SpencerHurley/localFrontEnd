@@ -67,14 +67,17 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.service
       .profile()
-      .then(user => this.user = user)
+      .then(user =>  this.user = user)
+      .then(() => console.log(this.user))
       .then(() => {
-        if (this.user == null) {
-          this.router.navigate(['/register']);
+        if (this.user.LOGIN) {
+          console.log("Log in!");
+          window.alert('You need to log in before accessing this page.');
+          this.router.navigate(['/login']);
           return;
         }
       })
-      .then((user) => this.isAdmin = (this.user.username === 'admin'))
+      .then(() => this.isAdmin = (this.user.username === 'admin'))
       .then(() => this.getRuns())
       .then(() => this.getTeams())
       .then(() => this.getSegments());
